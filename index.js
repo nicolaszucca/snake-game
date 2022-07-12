@@ -39,11 +39,8 @@ function draw() {
     collisionsWall();
     collisionsBall(randomBall);
     score();
-
-    //ayudas visuales ahre
-    text(`X : ${x}`, 250, 300)
-    text(`Y : ${y}`, 250, 350)
 }
+
 
 
 function drawBalls(ball) {
@@ -54,7 +51,6 @@ function drawBalls(ball) {
 
 function drawUser(x, y) {
     rect(x, y, userWidth, userHeight);
-    //scale(), transalte() ... --> estan tomando el canvas como parametro a modificar y no el user (rect).
 }
 
 function drawStructure() {
@@ -107,12 +103,11 @@ function collisionsWall() {
     }
 }
 
-//fix in future...
+//Is not perfect yet
 function collisionsBall(ball) {
-    //Temporaly...
-    //Is not perfect. The user's range should be greater when eating from different angles. Modify in the future.
-    for (let i = x; i < x + 27; i++) {
-        for (let j = y; j < y + 27; j++) {
+
+    for (let i = x; i < x + 25; i++) {
+        for (let j = y; j < y + 25; j++) {
             if (i === ball.x && j === ball.y) {
                 randomBall = null;
                 points++;
